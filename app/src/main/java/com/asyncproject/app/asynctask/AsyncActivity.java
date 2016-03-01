@@ -33,7 +33,6 @@ public class AsyncActivity extends Activity {
             @Override
             protected void onCancelled() {
                 Log.i("AsyncProject", "AsyncTask is canceled");
-                super.onCancelled();
             }
         };
 

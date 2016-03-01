@@ -9,19 +9,28 @@ import com.asyncproject.app.R;
 import java.lang.ref.WeakReference;
 
 public class WeakThreadActivity extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.thread_activity);
 
-        MyThread myThread = new MyThread(this);
-        myThread.start();
+        MyThread.newInstance(this).start();
+    }
+
+    private void updateTextView(String text) {
+        TextView txtHello = (TextView) findViewById(R.id.txt_hello);
+        txtHello.setText(text);
     }
 
     private static class MyThread extends Thread {
         private WeakReference<WeakThreadActivity> weakReference;
 
-        public MyThread(WeakThreadActivity activity) {
+        public static MyThread newInstance(WeakThreadActivity activity) {
+            return new MyThread(activity);
+        }
+
+        private MyThread(WeakThreadActivity activity) {
             this.weakReference = new WeakReference<WeakThreadActivity>(activity);
         }
 
@@ -38,8 +47,7 @@ public class WeakThreadActivity extends Activity {
             activity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    TextView txtHello = (TextView) activity.findViewById(R.id.txt_hello);
-                    txtHello.setText("Hello World");
+                    activity.updateTextView("Hello World");
                 }
             });
         }
