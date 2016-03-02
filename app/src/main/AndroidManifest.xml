@@ -17,11 +17,16 @@
         <activity android:name=".asynctask.AsyncActivity">
         </activity>
         <activity android:name=".intentservice.IntentActivity">
+        </activity>
+        <activity android:name=".executor.ExecutorActivity">
+        </activity>
+        <activity android:name=".handler.HandlerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <service android:name=".intentservice.MyService"/>
     </application>
 
