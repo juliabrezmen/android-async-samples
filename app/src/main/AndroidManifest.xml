@@ -21,13 +21,16 @@
         <activity android:name=".executor.ExecutorActivity">
         </activity>
         <activity android:name=".handler.HandlerActivity">
+        </activity>
+        <activity android:name=".bindservice.ServiceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <service android:name=".intentservice.MyService"/>
+        <service android:name=".intentservice.MyIntentService"/>
+        <service android:name=".bindservice.MyService"/>
     </application>
 
 </manifest>

@@ -10,6 +10,6 @@ public class IntentActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intent_activity);
-        MyService.start("Hello from me", this);
+        MyIntentService.start("Hello from me", this);
     }
 }
