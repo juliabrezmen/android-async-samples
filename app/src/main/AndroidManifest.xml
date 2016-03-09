@@ -23,6 +23,8 @@
         <activity android:name=".handler.HandlerActivity">
         </activity>
         <activity android:name=".bindservice.ServiceActivity">
+        </activity>
+        <activity android:name=".timer.TimerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
